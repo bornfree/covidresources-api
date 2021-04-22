@@ -44,5 +44,6 @@ app.use(function(err, req, res, next) {
 
 const DATA_FETCH_INTERVAL = 60*1000;
 setInterval(dataLoader, DATA_FETCH_INTERVAL);
+dataLoader();
 
 module.exports = app;

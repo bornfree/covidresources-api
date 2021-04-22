@@ -21,7 +21,7 @@ function processData() {
             results: XLSX.utils.sheet_to_json(wb.Sheets[name])
         }
     });
-    
+
     let newData = {};
     _.each(data, item => {
 
@@ -44,7 +44,7 @@ function processData() {
                 category: row['Resource'] || '',
                 name: row['Point of Contact'] || '',
                 description: row['Detail'] || '',
-                contact: row['Contact'] || '',
+                contact: row['Contact Name'] || '',
                 verified: row['Verified'],
                 stock: row['Stock'],
                 createdAt: row['Created at'],

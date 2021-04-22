@@ -12,7 +12,7 @@ function processData() {
     
     // Don't pick up crowdsourced sheet
     let sheetNames = _.reject(wb.SheetNames, name => {
-        return name === "Crowdsourced";
+        return ["Crowdsourced", "Template"].includes(name.trim());
     });
 
     let data = _.map(sheetNames, name => {

@@ -1,0 +1,158 @@
+{
+  "Delhi": [
+    {
+      "id": "uODnVd",
+      "category": "Oxygen",
+      "name": "",
+      "description": "(Dummy) 10L",
+      "contact": 9999900000,
+      "verified": "Verified",
+      "stock": "In Stock",
+      "lastVerified": 44308.153916828705
+    },
+    {
+      "id": "VbxdnI",
+      "category": "Hospital Bed",
+      "name": "",
+      "description": "ICU",
+      "contact": 8888800000,
+      "verified": "Verified",
+      "stock": "In Stock",
+      "lastVerified": 44309.153912037036
+    },
+    {
+      "id": "2ZQeCu",
+      "category": "Medicine",
+      "name": "",
+      "description": "Remdesivir",
+      "contact": 7777700000,
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44310.153912037036
+    },
+    {
+      "id": "P42XcH",
+      "category": "Ambulance",
+      "name": "",
+      "description": "ABC ambulance service",
+      "contact": 8888899999,
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44311.153912037036
+    },
+    {
+      "id": "cJn8Fh",
+      "category": "Oxygen",
+      "name": "",
+      "description": "",
+      "contact": "",
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44321.153912037036
+    }
+  ],
+  "Mumbai": [
+    {
+      "id": "Eiz5hH",
+      "category": "Oxygen",
+      "name": "",
+      "description": "(Dummy) 10L",
+      "contact": 9999900000,
+      "verified": "Verified",
+      "stock": "In Stock",
+      "lastVerified": 44308.153916828705
+    },
+    {
+      "id": "Y0EVZZ",
+      "category": "Hospital Bed",
+      "name": "",
+      "description": "ICU",
+      "contact": 8888800000,
+      "verified": "Verified",
+      "stock": "In Stock",
+      "lastVerified": 44309.153912037036
+    },
+    {
+      "id": "HkaybL",
+      "category": "Medicine",
+      "name": "",
+      "description": "Remdesivir",
+      "contact": 7777700000,
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44310.153912037036
+    },
+    {
+      "id": "ANAEda",
+      "category": "Ambulance",
+      "name": "",
+      "description": "ABC ambulance service",
+      "contact": 8888899999,
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44311.153912037036
+    },
+    {
+      "id": "DDwBWc",
+      "category": "Oxygen",
+      "name": "",
+      "description": "",
+      "contact": "",
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44321.153912037036
+    }
+  ],
+  "Pune": [
+    {
+      "id": "Q2Dnrh",
+      "category": "Oxygen",
+      "name": "",
+      "description": "(Dummy) 10L",
+      "contact": 9999900000,
+      "verified": "Verified",
+      "stock": "In Stock",
+      "lastVerified": 44308.153916828705
+    },
+    {
+      "id": "98NTmi",
+      "category": "Hospital Bed",
+      "name": "",
+      "description": "ICU",
+      "contact": 8888800000,
+      "verified": "Verified",
+      "stock": "In Stock",
+      "lastVerified": 44309.153912037036
+    },
+    {
+      "id": "63WzjP",
+      "category": "Medicine",
+      "name": "",
+      "description": "Remdesivir",
+      "contact": 7777700000,
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44310.153912037036
+    },
+    {
+      "id": "9ZEDxU",
+      "category": "Ambulance",
+      "name": "",
+      "description": "ABC ambulance service",
+      "contact": 8888899999,
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44311.153912037036
+    },
+    {
+      "id": "wfNqQE",
+      "category": "Oxygen",
+      "name": "",
+      "description": "",
+      "contact": "",
+      "verified": "No",
+      "stock": "In Stock",
+      "lastVerified": 44321.153912037036
+    }
+  ]
+}

@@ -125,5 +125,5 @@ public/static/*
 public/editor.html
 
 # Generated JS
-public/javascripts/widget.js
-public/javascripts/dom-inspector.min.js
+public/data.xlsx
+public/data.json

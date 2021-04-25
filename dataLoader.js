@@ -8,7 +8,7 @@ function processData() {
 
     console.log("Processing...");
 
-    let wb = XLSX.readFile("./public/data.xlsx");
+    let wb = XLSX.readFile("./public/data_master.xlsx");
     
     // Don't pick up crowdsourced sheet
     let sheetNames = _.reject(wb.SheetNames, name => {
@@ -18,7 +18,7 @@ function processData() {
     let data = _.map(sheetNames, name => {
         return {
             location: name,
-            results: XLSX.utils.sheet_to_json(wb.Sheets[name])
+            results: XLSX.utils.sheet_to_json(wb.Sheets[name], {raw: false})
         }
     });
     
@@ -45,7 +45,7 @@ function processData() {
                 name: row['Contact Name'] || '',
                 description: row['Detail'] || '',
                 contact: row['Contact'] || '',
-                verified: row['Verified'],
+                verified: true,
                 stock: row['Stock'],
                 createdAt: row['Created at'],
                 lastVerified: row['Last verified']
@@ -59,24 +59,24 @@ function processData() {
     });
 
 
-    fs.writeFileSync('./public/data.json', JSON.stringify(newData, null, 2) , 'utf-8');
-    console.log('Downloaded to ./public/data.json');
+    fs.writeFileSync('./public/data_master.json', JSON.stringify(newData, null, 2) , 'utf-8');
+    console.log('Downloaded to ./public/data_master.json');
 
 
 }
 
 function download(){
 
-    console.log("Downloading Google Sheet...");
+    console.log("Downloading Master Google Sheet...");
 
     axios({
-            url: process.env.GOOGLE_SHEET_URL,
+            url: process.env.GOOGLE_SHEET_MASTER_URL,
             method: 'GET',
             responseType: 'stream'
         })
         .then(res => {
             res.data
-                .pipe(fs.createWriteStream("./public/data.xlsx"))
+                .pipe(fs.createWriteStream("./public/data_master.xlsx"))
                 .on('finish', processData);
         })
         .catch(err => {

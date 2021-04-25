@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cors = require('cors');
 var requestIp = require('request-ip');
 var dataLoader = require('./dataLoader');
+var dataLoaderNew = require('./dataLoaderNew');
 
 var apiRouter = require('./routes/api');
 
@@ -42,8 +43,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const DATA_FETCH_INTERVAL = 60*1000;
-setInterval(dataLoader, DATA_FETCH_INTERVAL);
+const DATA_FETCH_INTERVAL = 60*2000;
+
+// Read lead form data every 2 mins
+setInterval(dataLoaderNew, DATA_FETCH_INTERVAL);
+// Read master data once
 dataLoader();
+// Read lead form responses 10s later
+setTimeout(dataLoaderNew, 10000);
 
 module.exports = app;

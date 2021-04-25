@@ -46,7 +46,7 @@ function processData() {
                 description: row['Detail'] || '',
                 contact: row['Contact'] || '',
                 verified: true,
-                stock: row['Stock'],
+                stock: '',
                 createdAt: row['Created at'],
                 lastVerified: row['Last verified']
             };

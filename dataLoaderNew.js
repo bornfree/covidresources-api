@@ -31,7 +31,8 @@ function processData() {
             contact: row['Contact Number'] || '',
             verified: row['Verified by Team'],
             createdAt: row['Timestamp'],
-            lastVerified: row['Verification Time Stamp']
+            lastVerified: row['Verification Time Stamp'],
+            stock: row['Availability']
         };
 
         newResult.description += (" " + (row['Locality/ Address'] || '' ));

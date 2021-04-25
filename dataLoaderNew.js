@@ -10,7 +10,7 @@ function processData() {
 
     let wb = XLSX.readFile("./public/data.xlsx");
 
-    let data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+    let data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { raw: false});
     
     let newData = {};
     _.each(data, row => {

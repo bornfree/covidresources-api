@@ -29,7 +29,7 @@ function processData() {
             name: row['Contact Name'] || '',
             description: row['Details (Medicine Name, Bed with or w/o oxygen, Hospital name, Blood group etc)'] || '',
             contact: row['Contact Number'] || '',
-            verified: row['Verified by Team'],
+            verified: row['Verified'],
             createdAt: row['Timestamp'],
             lastVerified: row['Verification Time Stamp'],
             stock: row['Availability']

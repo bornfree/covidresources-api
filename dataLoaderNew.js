@@ -9,43 +9,45 @@ function processData() {
     console.log("Processing...");
 
     let wb = XLSX.readFile("./public/data.xlsx");
-
-    let data = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { raw: false});
-    
     let newData = {};
-    _.each(data, row => {
+    
+    _.each([wb.SheetNames[0], wb.SheetNames[1]], sheetName => {
 
-        let location = row['City/Town'];
-        if(!location || location.trim().length < 1)
-            return;
+        let data = XLSX.utils.sheet_to_json(wb.Sheets[sheetName], { raw: false});
+    
+        _.each(data, row => {
 
-        if (! newData.hasOwnProperty(location)) {
-            newData[location] = [];
-        }
+            let location = row['City/Town'];
+            if(!location || location.trim().length < 1)
+                return;
 
-        let newResult = {
-            id: Math.floor(Math.random()*1e12).toString(36),
-            category: row['What is the lead for?'] || '',
-            name: row['Contact Name'] || '',
-            description: row['Details (Medicine Name, Bed with or w/o oxygen, Hospital name, Blood group etc)'] || '',
-            contact: row['Contact Number'] || '',
-            verified: row['Verified'],
-            createdAt: row['Timestamp'],
-            lastVerified: row['Verification Time Stamp'],
-            stock: row['Availability']
-        };
+            if (! newData.hasOwnProperty(location)) {
+                newData[location] = [];
+            }
 
-        newResult.description += (" " + (row['Locality/ Address'] || '' ));
+            let newResult = {
+                id: Math.floor(Math.random()*1e12).toString(36),
+                category: row['What is the lead for?'] || '',
+                name: row['Contact Name'] || '',
+                description: row['Details (Medicine Name, Bed with or w/o oxygen, Hospital name, Blood group etc)'] || '',
+                contact: row['Contact Number'] || '',
+                verified: row['Verified'],
+                createdAt: row['Timestamp'],
+                lastVerified: row['Verification Time Stamp'],
+                stock: row['Availability']
+            };
 
-        if ( newResult.verified && newResult.verified.toLowerCase().includes("yes")) {
-            newResult.verified = true;
-            newData[location].push(newResult);
-        }
-        
+            newResult.description += (" " + (row['Locality/ Address'] || '' ));
+
+            if ( newResult.verified && newResult.verified.toLowerCase().includes("yes")) {
+                newResult.verified = true;
+                newData[location].push(newResult);
+            }
+            
+        });
 
     });
-
-
+    
     console.log("Merging master data");
     let masterData = JSON.parse(fs.readFileSync("./public/data_master.json"));
 
